@@ -35,11 +35,13 @@ jobs:
      #   name: app-release.apk
      #   path: build/app/outputs/flutter-apk/app-release.apk
         
-    - name: send custom message with args
-      uses: robotomize/notify-telegram@v0.1.0
-      with:
-        chat: ${{ secrets.TELEGRAM_TO }}
-        token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: "flutter_actions: Build available"
-        status: ${{ job.status }}
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - name: send custom message with args
+        uses: robotomize/notify-telegram@v0.1.0
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: "flutter_actions: Build available"
         
