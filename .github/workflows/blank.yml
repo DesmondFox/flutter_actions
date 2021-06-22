@@ -25,7 +25,7 @@ jobs:
     - run: flutter pub get
     
    # - name: Lint
-    - run: flutter analize --no-fatal-infos
+    - run: flutter analyze --no-fatal-infos
     
     #- name: Test
     - run: flutter test
