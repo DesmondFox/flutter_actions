@@ -26,16 +26,16 @@ jobs:
         flutter-version: '2.0.5'
     - run: flutter pub get
     
-    - name: Lint
+   # - name: Lint
     - run: flutter analize --no-fatal-infos
     
-    - name: Test
+    #- name: Test
     - run: flutter test
     
-    - name: Build android
+    #- name: Build android
     - run: flutter build apk
     
-    - name: build ios
+    #- name: build ios
     - run: flutter build ios --release --no-codesign
     
     - name: Upload APK
