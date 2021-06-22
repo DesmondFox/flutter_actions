@@ -22,8 +22,6 @@ jobs:
       with:
         java-version: '12.x'
     - uses: subosito/flutter-action@v1
-      with:
-        flutter-version: '2.0.5'
     - run: flutter pub get
     
    # - name: Lint
@@ -45,6 +43,7 @@ jobs:
         path: build/app/outputs/flutter-apk/app-release.apk
         
   send:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: send custom message with args
